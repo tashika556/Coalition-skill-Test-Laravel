@@ -20,9 +20,9 @@ class ProductController extends Controller
     }
 
 
-    public function edit(Product $product)
+    public function edit()
     {
-        
+        return view('edit');
     }
 
    

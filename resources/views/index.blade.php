@@ -1,99 +1,98 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layout')
+@section('page_title','Coalition Skill Test Form')
 
-        <title>Laravel</title>
+@section('container')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="section-title bg-blue">
+                    <h3 class="text-center">
+                        Product Details Form
+                    </h3>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+
+        <div class="row">
+            <div class="span12">
+                <div class="form-box mt-4 ">
+                    <form class="well">
+
+              <label>Product name</label>
+                                <input type="text" name="product_name" class="span9 mb-4 p-10" placeholder="Product name">
+                        
+                
+                                <label>Quantity in Stock</label>
+                                <input type="number" name="quantity" class="span9 mb-4 p-10" placeholder="Quantity in Stock">
+           
+                      
+                                <label>Price Per Item</label>
+                                <input type="number" name="price_per_item" class="span9 mb-4 p-10" placeholder="Price Per Item">
+<br>
+                                <button type="submit" class="btn btn-primary text-center mt-10 mb-4">Submit</button>
+         
+                    </form>
+                    
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<hr>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="section-title bg-blue">
+                    <h3 class="text-center">
+                        Product List
+                    </h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span12">
+                <div class="form-box mt-4 ">
+                <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity in Stock</th>
+                    <th>Price Per Item</th>
+                    <th>Date and time Submitted</th>
+                    <th>Total Value Number</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td colspan="4"><strong></strong></td>
+                    <td><strong></strong></td>
+                </tr>
+            </tbody>
+        </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+@endsection
+
