@@ -9,3 +9,4 @@ Route::post('/products', [ProductController::class, 'store'])->name('products.st
 
 
 Route::get('products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
+Route::put('products/{id}', [ProductController::class, 'update'])->name('products.update');
