@@ -47,18 +47,15 @@ class ProductController extends Controller
         $xml_data->addChild('price_per_item', $product->price_per_item);
         $xml_data->addChild('total_value_number', $total_value_number);
 
-        $xml_file_path = storage_path('app/products.xml');
+        $xml_file_path = storage_path('app/products/' . $product->id . '_product.xml');
         $xml_data->asXML($xml_file_path);
 
         $json_data = json_encode($product->toArray(), JSON_PRETTY_PRINT);
-        $json_file_path = storage_path('app/products.json');
+       $json_file_path = storage_path('app/products/' . $product->id . '_product.json');
         File::put($json_file_path, $json_data);
         $product->xml_data = $xml_data->asXML();
         $product->save();
-                if ($request->ajax()) {
-            return response()->json(['success' => true, 'product' => $product], 200);
-        }
-
+    
 
         return redirect()->back()->with('success', 'Product saved successfully.');
         
@@ -94,8 +91,7 @@ class ProductController extends Controller
         $xml_data->addChild('price_per_item', $product->price_per_item);
         $xml_data->addChild('total_value_number', $product->total_value_number);
 
-     
-        $xml_file_path = storage_path('app/products.xml');
+        $xml_file_path = storage_path('app/products/' . $product->id . '_product.xml');
         $xml_data->asXML($xml_file_path);
 
   
