@@ -55,7 +55,10 @@ class ProductController extends Controller
         File::put($json_file_path, $json_data);
         $product->xml_data = $xml_data->asXML();
         $product->save();
-        
+                if ($request->ajax()) {
+            return response()->json(['success' => true, 'product' => $product], 200);
+        }
+
 
         return redirect()->back()->with('success', 'Product saved successfully.');
         
